@@ -7,7 +7,7 @@ namespace DemoSlide3.Models.ViewModels
         [Required]
         public string Id { get; set; }
 
-        [Required()]
+        [Required(ErrorMessage ="Role khoong dc bo trong ")]
         public string RoleName { get; set; }
     }
 }
