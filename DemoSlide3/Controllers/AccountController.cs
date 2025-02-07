@@ -49,7 +49,7 @@ namespace DemoSlide3.Controllers
             if (result.Succeeded)
             {
                 _logger.LogInformation(1, "User logged in.");
-                return RedirectToAction("Index", "Home"); // Redirect to home page on successful login
+                return RedirectToAction("Index", "Home");
             }
             if (result.IsLockedOut)
             {
@@ -88,7 +88,11 @@ namespace DemoSlide3.Controllers
             return View(model);
         }
 
-
+        public IActionResult Logout()
+        {
+            _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
         public IActionResult Index()
         {
             return View();

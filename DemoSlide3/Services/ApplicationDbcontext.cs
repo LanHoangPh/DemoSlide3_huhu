@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using DemoSlide3.Models.ViewModels;
 
 namespace DemoSlide3.Services
 {
@@ -30,5 +31,6 @@ namespace DemoSlide3.Services
                 entity.Property(e => e.Email).HasColumnName("EmailAddress");
             });
         }
+        public DbSet<DemoSlide3.Models.ViewModels.EditUserViewModel> EditUserViewModel { get; set; } = default!;
     }
 }
